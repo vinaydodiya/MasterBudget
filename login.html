@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body align="center">
+    <div class="content" align="center">
+        <form action="login.php" method="post" name="nlogin">
+            <table align="center">
+                <tr>
+                    <th><h2 align="center">LOGIN</h2></th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>E-MAIL</label><BR>
+                        <input type="email" name="iemail" placeholder="email@gmail.com" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>PASSWORD</label><BR>
+                        <input type="password" name="ipassword" placeholder="********" required>
+                        <label>Forget <a href="forgetpass.html">Password?</a></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <a href="mainpage.html"><input type="submit" name="isubmit" align="center" value="Log In" id="submit"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                       <a href="signup.PHP"><input type="button" name="isigmup" align="center" value="Sign Up" id="signup"></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

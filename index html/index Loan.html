@@ -1,0 +1,215 @@
+<html>
+ <head>
+  <title>
+   Loans &amp; Mortgages
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ecf0f1;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .sidebar a.active {
+            background-color: #34495e;
+        }
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .logo img {
+            width: 50px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .header .balance-info {
+            display: flex;
+            gap: 20px;
+        }
+        .header .balance-info div {
+            text-align: right;
+        }
+        .header .balance-info div span {
+            display: block;
+        }
+        .header .balance-info .income {
+            color: #27ae60;
+        }
+        .header .balance-info .expenses {
+            color: #c0392b;
+        }
+        .header .balance-info .balance {
+            color: #27ae60;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            width: 150px;
+        }
+        .main-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .main-content .message {
+            background-color: #f9e79f;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .main-content .message p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .main-content .message button {
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .main-content .message button:hover {
+            background-color: #219150;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {
+                float: left;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .balance-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <div class="logo">
+    <img alt="Logo" height="50" src="https://storage.googleapis.com/a1aa/image/845AFJMHJZ4TIZsU0fteeYKUjNYg4T249B4AuilDCn0qq48nA.jpg" width="50"/>
+   </div>
+   <a class="active" href="#">
+    Dashboard
+   </a>
+   <a href="#">
+    Transactions
+   </a>
+   <a href="#">
+    Bills, Recurring Transactions &amp; Installment
+   </a>
+   <a href="#">
+    Budget
+   </a>
+   <a href="#">
+    Credit Card
+   </a>
+   <a href="#">
+    Exchange Rate
+   </a>
+   <a href="#">
+    Pin Board
+   </a>
+   <a href="#">
+    Loans &amp; Mortgages
+   </a>
+   <a href="#">
+    Reports
+   </a>
+  </div>
+  <div class="content">
+   <div class="header">
+    <div class="menu-icon">
+     <i class="fas fa-bars">
+     </i>
+    </div>
+    <div class="balance-info">
+     <div class="income">
+      <span>
+       Income Dec 2024
+      </span>
+      <span>
+       +$950.00
+      </span>
+     </div>
+     <div class="expenses">
+      <span>
+       Expenses Dec 2024
+      </span>
+      <span>
+       -$710.00
+      </span>
+     </div>
+     <div class="balance">
+      <span>
+       My Balance
+      </span>
+      <span>
+       +$2,070.00
+      </span>
+     </div>
+    </div>
+    <div class="logo">
+     <img alt="Controle Finance Logo" height="50" src="https://storage.googleapis.com/a1aa/image/BuRFd45sv95SPNHA650v996v5OYVn3emWEC7dutJiHfUVcenA.jpg" width="150"/>
+    </div>
+   </div>
+   <div class="main-content">
+    <div class="message">
+     <p>
+      You haven't created any account of type {0}.
+     </p>
+     <button>
+      Create an account now
+     </button>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

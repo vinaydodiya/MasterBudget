@@ -1,0 +1,44 @@
+body{
+    height: 95vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    
+    width: 35%;
+    background-color: rgb(218, 235, 234);
+    box-shadow: 1px 1px 10px black;
+    border-radius: 2%;
+}
+
+table{
+   
+    padding: 50px;
+}
+
+input, select{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+#textarea{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+label{
+    padding: 10px;
+}
+
+#submit{
+    color: white;
+    background-color: forestgreen;
+}
+#create{
+    color: white;
+    background-color:dodgerblue;
+}

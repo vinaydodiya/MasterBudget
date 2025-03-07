@@ -1,0 +1,9 @@
+SELECT sum(amount),type FROM `transactions` where account = '12345678901' GROUP by type;
+SELECT sum(amount),type FROM `transactions` where account = '12345678901' GROUP by type;
+
+SELECT sum(amount), type, category FROM `transactions` GROUP by category HAVING type='Income';
+
+
+
+//  ----- Total amount in USD format group by Account Holders -------
+SELECT t.account, sum(t.amount / c.crvalue) FROM `transactions` t ,currency c, bank_details b, accounts a where t.account = b.accountNo and b.email = a.Email and a.country = c.country_name group by t.account;

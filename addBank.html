@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <div class="incexp">
+        
+        <FORM method="post" action="addBank.php">
+            <table border="0px">
+                <tr>
+                    <th colspan="2">BANK DETAILS</th>
+                </tr>
+                <tr>
+                    <td>Bank Name</td>
+                    <td><input type="text" name="bankName" required></td>
+                </tr>
+                <tr>
+                    <td>Account No</td>
+                    <td><input type="number" name="accno"  required minlength="11"></td>
+                </tr>
+                <tr>
+                    <td>IFSC Code</td>
+                    <td><input type="text" name="ifsc" required></td>
+                </tr>
+                <!--<tr>
+                    <td>E-MAIL</td>
+                    <td><input type="email" name="temail" value="" ></td>
+                </tr>-->
+                <tr>
+                    <td>Phone No</td>
+                    <td><input type="number" name="phno" required></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="addr" placeholder="Branch" style="width:40%;" required>
+                        <input type="number" placeholder="000-000" name="pincode" style="width:30%;" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" id="submit"></td>
+                </tr>
+            </table>
+        </FORM>
+    </div>
+</body>
+</html>

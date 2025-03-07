@@ -1,0 +1,191 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dashboard
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div class="w-64 bg-gray-800 text-white h-screen">
+    <div class="p-4">
+     <img alt="Logo" class="mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/W3ifs47xbnXMF6W9RaJDjBohjos1Cje080NFuhBHO11lJXenA.jpg" width="50"/>
+    </div>
+    <nav class="mt-10">
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Dashboard
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Transactions
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Bills, Recurring Transactions &amp; Installment
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Budget
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Credit Card
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Exchange Rate
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Pin Board
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Loans &amp; Mortgages
+     </a>
+     <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700" href="#">
+      Reports
+     </a>
+    </nav>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h1 class="text-2xl font-semibold">
+      From 01/01/2024 To 12/31/2024 - Income vs. Expenses
+     </h1>
+     <img alt="Controle Finance Logo" height="50" src="https://storage.googleapis.com/a1aa/image/43OEeeuOGfZ5VIck3W3lZc5ZYFZnuQEeIIEtSYDPMFPHmc5PB.jpg" width="100"/>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+     <!-- Chart -->
+     <div class="col-span-2 bg-white p-4 rounded-lg shadow">
+      <!--<img alt="Income vs Expenses Chart" height="300" src="https://storage.googleapis.com/a1aa/image/XUt7iKZgngaXMpCA2bs08Iw1skCZZ7yWxXg1nwVWBooZylfJA.jpg" width="600"/>-->
+
+
+     </div>
+     <!-- Summary -->
+     <div class="bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+       <h2 class="text-xl font-semibold">
+        $ 3,150.00
+       </h2>
+       <span>
+        Total Income
+       </span>
+      </div>
+      <div class="flex justify-between items-center mb-4 text-red-500">
+       <h2 class="text-xl font-semibold">
+        $ -1,080.00
+       </h2>
+       <span>
+        Total Spend
+       </span>
+      </div>
+      <div class="flex justify-between items-center">
+       <h2 class="text-xl font-semibold">
+        $ 2,070.00
+       </h2>
+       <span>
+        Total
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+     <!-- Accounts -->
+     <div class="bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+       <h2 class="text-xl font-semibold">
+        Accounts
+       </h2>
+       <i class="fas fa-cog">
+       </i>
+      </div>
+      <div class="mb-4">
+       <div class="flex justify-between items-center">
+        <span>
+         Banking
+        </span>
+        <span>
+         $ 2,070.00
+        </span>
+       </div>
+       <div class="flex justify-between items-center">
+        <span>
+         Demo Account 1
+        </span>
+        <span>
+         $ 2,070.00
+        </span>
+       </div>
+      </div>
+      <div class="flex justify-between items-center">
+       <span>
+        Total:
+       </span>
+       <span>
+        $ 2,070.00
+       </span>
+      </div>
+     </div>
+     <!-- Expenses -->
+     <div class="bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+       <h2 class="text-xl font-semibold">
+        Expenses 01/01/2024 To 12/31/2024
+       </h2>
+       <i class="fas fa-cog">
+       </i>
+      </div>
+      <!--<img alt="Expenses Pie Chart" height="200" src="https://storage.googleapis.com/a1aa/image/qTy6dMvSpeRTVKj83CfwveDu0efkGJbrsYt21PMF1xBeYylfJA.jpg" width="200"/>-->
+
+      <div id="myPlot" style="width:100%;max-width:300px;height:300px;"></div>
+
+      <script>
+          function pichart(){
+          let inc = 1000;
+          let exp = 750;
+          let bal = inc - exp;
+      const xArray = ["Income","Expences","Savings"];
+      const yArray = [inc,exp,bal];
+      
+      const layout = {title:"World Wide Wine Production"};
+      
+      const data = [{labels:xArray, values:yArray, type:"pie"}];
+      
+      Plotly.newPlot("myPlot", data, layout);
+          }
+          
+          pichart()
+          
+      </script>
+      
+     <!-- Income -->
+     <div class="bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+       <h2 class="text-xl font-semibold">
+        Income Dec 2024
+       </h2>
+      </div>
+      <div class="text-center text-2xl font-semibold">
+       $950.00
+      </div>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+     <!-- Expenses Dec 2024 -->
+     <div class="bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+       <h2 class="text-xl font-semibold">
+        Expenses Dec 2024
+       </h2>
+      </div>
+      <div class="text-center text-2xl font-semibold text-red-500">
+       $ 710.00
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

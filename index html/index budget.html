@@ -1,0 +1,333 @@
+<html>
+ <head>
+  <title>
+   Expenditure Budget
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar img {
+            width: 40px;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background-color: #34495e;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            width: 150px;
+        }
+        .header .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .header .stats div {
+            text-align: right;
+        }
+        .header .stats div span {
+            display: block;
+        }
+        .header .stats div span.value {
+            font-weight: 700;
+        }
+        .header .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .header .icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .main-content {
+            margin-top: 20px;
+        }
+        .main-content .title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .main-content .card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .main-content .card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .main-content .card .card-header h2 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .main-content .card .card-header i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .main-content .card .card-body {
+            text-align: center;
+            color: #7f8c8d;
+        }
+        .main-content .card .card-body .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .main-content .card .card-body .btn-group button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            border-radius: 5px;
+        }
+        .main-content .card .card-body .btn-group button.active {
+            background-color: #27ae60;
+            color: #fff;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ecf0f1;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                padding: 10px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .icons {
+                margin-top: 10px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="sidebar">
+    <img alt="Logo" height="40" src="https://storage.googleapis.com/a1aa/image/bVEZjHgXC3rfCy5JfOwH8mllK6X3fW1SeUKyv83UzvvfeDnfJA.jpg" width="40"/>
+    <ul>
+     <li>
+      <i class="fas fa-tachometer-alt">
+      </i>
+      Dashboard
+     </li>
+     <li>
+      <i class="fas fa-exchange-alt">
+      </i>
+      Transactions
+     </li>
+     <li>
+      <i class="fas fa-file-invoice-dollar">
+      </i>
+      Bills, Recurring Transactions &amp; Installment
+     </li>
+     <li>
+      <i class="fas fa-chart-pie">
+      </i>
+      Budget
+      <ul>
+       <li>
+        Expenditure budget
+       </li>
+       <li>
+        Cash flow budget
+       </li>
+      </ul>
+     </li>
+     <li>
+      <i class="fas fa-credit-card">
+      </i>
+      Credit Card
+     </li>
+     <li>
+      <i class="fas fa-dollar-sign">
+      </i>
+      Exchange Rate
+     </li>
+     <li>
+      <i class="fas fa-thumbtack">
+      </i>
+      Pin Board
+     </li>
+     <li>
+      <i class="fas fa-home">
+      </i>
+      Loans &amp; Mortgages
+     </li>
+     <li>
+      <i class="fas fa-chart-line">
+      </i>
+      Reports
+     </li>
+    </ul>
+   </div>
+   <div class="content">
+    <div class="header">
+     <div class="logo">
+      <img alt="Controle Finance Logo" height="40" src="https://storage.googleapis.com/a1aa/image/MMfBwwpAjjXetk2zl56Ama2PtkPmQBxrlJeFZEBHpc1sfw5PB.jpg" width="150"/>
+     </div>
+     <div class="stats">
+      <div>
+       <span>
+        Income Dec 2024
+       </span>
+       <span class="value" style="color: #27ae60;">
+        +$950.00
+       </span>
+      </div>
+      <div>
+       <span>
+        Expenses Dec 2024
+       </span>
+       <span class="value" style="color: #c0392b;">
+        -$710.00
+       </span>
+      </div>
+      <div>
+       <span>
+        My Balance
+       </span>
+       <span class="value" style="color: #27ae60;">
+        +$2,070.00
+       </span>
+      </div>
+     </div>
+     <div class="icons">
+      <i class="fas fa-bell">
+      </i>
+      <i class="fas fa-user">
+      </i>
+     </div>
+    </div>
+    <div class="main-content">
+     <div class="title">
+      Expenditure budget
+     </div>
+     <div class="card">
+      <div class="card-header">
+       <h2>
+        Expenditure budget
+       </h2>
+       <i class="fas fa-sync-alt">
+       </i>
+      </div>
+      <div class="card-body">
+       <p>
+        You haven't created any budgets yet.
+       </p>
+       <div class="btn-group">
+        <button>
+         Weekly
+        </button>
+        <button>
+         Semimonthly
+        </button>
+        <button>
+         Monthly
+        </button>
+        <button>
+         Quarterly
+        </button>
+        <button>
+         Semi-annually
+        </button>
+        <button class="active">
+         Annually
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-header">
+       <h2>
+        Filters
+       </h2>
+      </div>
+      <div class="card-body">
+       <div class="btn-group">
+        <button>
+         <i class="fas fa-chevron-left">
+         </i>
+        </button>
+        <button>
+         2024
+        </button>
+        <button>
+         <i class="fas fa-chevron-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   © controle.finance 2012-2024
+  </div>
+ </body>
+</html>

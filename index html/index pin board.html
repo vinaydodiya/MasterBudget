@@ -1,0 +1,269 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Pin Board
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding-top: 20px;
+            color: white;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .sidebar a.active {
+            background-color: #1abc9c;
+        }
+        .sidebar .submenu a {
+            padding-left: 40px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .header .stats div {
+            text-align: center;
+        }
+        .header .stats div span {
+            display: block;
+        }
+        .header .stats div span.value {
+            font-weight: bold;
+        }
+        .header .stats div span.value.positive {
+            color: green;
+        }
+        .header .stats div span.value.negative {
+            color: red;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 40px;
+        }
+        .header .icons {
+            display: flex;
+            gap: 10px;
+        }
+        .header .icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .pin-board {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+        }
+        .note {
+            background-color: #ffeb3b;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .note .date {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #555;
+        }
+        .note .content {
+            margin-top: 40px;
+        }
+        .note .actions {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .note .actions i {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            left: 250px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {float: left;}
+            .content {margin-left: 0;}
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer {
+                width: 100%;
+                left: 0;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <img alt="Company Logo" height="100" src="https://storage.googleapis.com/a1aa/image/imIxFdlPDG61MRlieLPB3CddYJDjfSeF81v6FM4tAVURo48nA.jpg" width="100"/>
+   <a class="active" href="#">
+    <i class="fas fa-thumbtack">
+    </i>
+    Pin Board
+   </a>
+   <a href="#">
+    <i class="fas fa-tachometer-alt">
+    </i>
+    Dashboard
+   </a>
+   <a href="#">
+    <i class="fas fa-exchange-alt">
+    </i>
+    Transactions
+   </a>
+   <a href="#">
+    <i class="fas fa-file-invoice-dollar">
+    </i>
+    Bills, Recurring Transactions &amp; Installment
+   </a>
+   <a href="#">
+    <i class="fas fa-piggy-bank">
+    </i>
+    Budget
+   </a>
+   <a href="#">
+    <i class="fas fa-credit-card">
+    </i>
+    Credit Card
+   </a>
+   <a href="#">
+    <i class="fas fa-dollar-sign">
+    </i>
+    Exchange Rate
+   </a>
+   <a href="#">
+    <i class="fas fa-home">
+    </i>
+    Loans &amp; Mortgages
+   </a>
+   <a href="#">
+    <i class="fas fa-chart-line">
+    </i>
+    Reports
+   </a>
+  </div>
+  <div class="content">
+   <div class="header">
+    <div class="logo">
+     <img alt="Controle Finance Logo" height="40" src="https://storage.googleapis.com/a1aa/image/wjXvTge7RGRDECFiyL3Z5o7wRqqB1jIqNf9KMVhBQvfVo48nA.jpg" width="150"/>
+    </div>
+    <div class="stats">
+     <div>
+      <span>
+       Income Dec 2024
+      </span>
+      <span class="value positive">
+       +$950.00
+      </span>
+     </div>
+     <div>
+      <span>
+       Expenses Dec 2024
+      </span>
+      <span class="value negative">
+       -$710.00
+      </span>
+     </div>
+     <div>
+      <span>
+       My Balance
+      </span>
+      <span class="value positive">
+       +$2,070.00
+      </span>
+     </div>
+    </div>
+    <div class="icons">
+     <i class="fas fa-bell">
+     </i>
+     <i class="fas fa-user-circle">
+     </i>
+    </div>
+   </div>
+   <div class="pin-board">
+    <div class="note">
+     <div class="date">
+      12/22/2024 13:31
+     </div>
+     <div class="content">
+      <h3>
+       Welcome
+      </h3>
+      <p>
+       Welcome to Controle.finance!
+      </p>
+     </div>
+     <div class="actions">
+      <i class="fas fa-edit">
+      </i>
+      <i class="fas fa-trash">
+      </i>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   © controle.finance 2012-2024
+  </div>
+ </body>
+</html>

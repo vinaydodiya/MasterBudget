@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Budget</title>
+    <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
+    <style>
+        body{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+      
+        .main_div{
+            display: flex;
+            height: 100vh;
+        }
+
+        .menubar{
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            background-color: #023047;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            flex: 2;
+            height: 100%;
+        }
+        .contener_div{
+            flex: 10;
+            display: flex;
+            flex-direction: column;
+        }
+        .headersid{
+            flex: 2;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0% 3%;
+        }
+        .header_Title{
+            flex: 2;
+        }
+        .contents{
+            flex: 10;
+            height: 100%;
+        }
+        .heading{
+            margin: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+
+        }
+        li{
+            list-style: none;
+            padding: 15px;
+            border-radius: 10px 0px 0px 10px;
+            text-align: left;
+        }
+        li:hover{
+            background-color: #219ebc;
+        }
+        h1{
+            color: #023047;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h5{
+            color:#023047;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <div class="menubar">
+
+            <div class="main">
+                <div class="heading">
+                    <img src="style/images/logo.png" alt="Master Budget" height="100px" width="150px">
+                </div>
+                <ul>
+                    <a href="deshboard.php" target="tframe"><li>Dashboard</li></a>
+                    <!--<a href="frame pages/transaction.php" target="tframe"><li>Transaction</li></a>-->
+                    <a href="frame pages/income.php" target="tframe"><li>Income</li></a>
+                    <a href="frame pages/expense.php" target="tframe"><li>Expenses</li></a>
+                    <a href="frame pages/investment.php" target="tframe"><li>Investment</li></a>
+                    <a href="frame pages/taxCalculate.php" target="tframe"><li>Tax Benefites</li></a>
+                    <a href="frame pages/tablePDF.php" target="tframe"><li>Repoart</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="contener_div">
+            <div class="headersid">
+                <div class="header_Title" align="center">
+                    <!--<img src="style/images/Master Budget Logo.png" alt="Master Budget" height="100px" width="50%">-->
+                    <h1>MASTER BUDGET</h1>
+                </div>
+                <div class="logout">
+                    <h5 onclick="lout()"><abbr title="Log Out"><img src="style/images/logout.svg" alt="" width="30px"></abbr></h5>
+                </div>
+            </div>
+            <div class="contents">
+                <iframe src="deshboard.php" frameborder="0" name="tframe" height="100%" width="100%"></iframe>
+            </div>
+        </div>
+    </div>
+    <script> 
+        function lout(){
+            if(confirm("Do you want to Log Out")){
+
+                alert('Logout Successfull..');
+                window.close();
+                window.history.clear();
+                window.open('index.php','_self');
+            }
+        }
+        </script>
+</body>
+</html>
