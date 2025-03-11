@@ -207,12 +207,7 @@ $eq = mysqli_query($con,$e)
 
 <canvas id="myChartb" width="800px" height="200px" ></canvas>
     <script>
-        // Sample dynamic data (You can change these values dynamically as per your needs)
-const months = ['January', 'February', 'March', 'April', 'May', 'June'];
-const incomes = [2000, 2500, 2300, 2700, 2200, 2400];  // Dynamic income values
-const expenses = [1500, 1800, 1600, 1900, 1700, 1800];  // Dynamic expense values
-
-
+    // values for the graph  
     const mvalue = JSON.parse('<?= json_encode($mvalue); ?>');
     const ivalue = JSON.parse('<?= json_encode($ivalue); ?>');
     const evalue = JSON.parse('<?= json_encode($evalue); ?>');
@@ -339,10 +334,6 @@ const myChart = new Chart(ctx, {
             while($rsm = mysqli_fetch_array($rmt)){
         
                 $t = ($t + $rsm['amount'])." ";
-            }
-            while($rsm = mysqli_fetch_array($rm))
-            {
-                $t = ($t + $rsm['amount']);
             }
             echo $t ."</p>";
             ?>

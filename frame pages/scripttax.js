@@ -50,7 +50,7 @@ function getTaxSavingSuggestions(income) {
     }
 
     if (income <= 500000) {
-        suggestions.push("Utilize the full limit of Section 80C (₹1.5 lakh) for tax savings.");
+        suggestions.push("Utilize the full limit of Section 80C (1.5 lakh) for tax savings.");
     }
 
     return suggestions;
