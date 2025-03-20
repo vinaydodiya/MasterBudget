@@ -8,21 +8,36 @@
     <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
 
     <style>
-        body{
-            background-color:aliceblue;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            align-items: center;
+        body {
+            background-color: #f4f7fa;
+            font-family: verdana;
+            font-size: 14px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
         }
-        .heading{
+
+        .heading {
             display: flex;
             justify-content: space-between;
-            background-color:lightblue;
+            align-items: center;
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 5px 50px;
+            padding: 20px 50px;
             margin: 20px;
             position: sticky;
-            top: 0px;
+            top: 0;
             z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
         }
         .ideas{
             background-color: white;
@@ -52,6 +67,9 @@
             padding: 20px;
             
         }
+        p{
+            font-size:medium;
+        }
        
     </style>
 </head>
@@ -78,7 +96,7 @@
                             while($row = mysqli_fetch_assoc($result)){
                                 echo "<tr class='ideas'><td><h3 id=hno>".$row['ID']."</h3></td>";
                                 echo "<td><h3>".$row['Item']."</h3>";
-                                echo "".$row['Text']."</td></tr>";
+                                echo "<p>".$row['Text']."</p></td></tr>";
                                 $cnt++;
                             }
                             

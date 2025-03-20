@@ -6,12 +6,13 @@
     mysqli_select_db($con, "masterbudget")
     or
     die("Error in database selection");
+   
     if(isset($_SESSION))
     {
         /*echo"Session is Started";*/
     }
     else{
-        
         session_start();
-        }
+    }
+    
 ?>

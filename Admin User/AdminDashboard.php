@@ -7,21 +7,41 @@
     <title>Admin Dashboard</title>
     <style>
         body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            overflow-y: scroll;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         .heading {
             display: flex;
             justify-content: space-between;
-            background-color: lightblue;
+            align-items: center;
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 5px 50px;
-            margin: 20px;
+            padding: 20px 50px;
             position: sticky;
-            top: 0px;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .heading h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .content-part{
+            margin-top: 20px;
+        }
         .totalValues {
             display: flex;
             justify-content: space-around;

@@ -37,20 +37,37 @@
     <title>Document</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
-        body{
-            background-color:aliceblue;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        body {
+            background-color: #f4f7fa;
+            font-family: verdana;
+            font-size: 14px;
+            position: relative;
+            
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
         }
-        .heading{
+
+        .heading {
             display: flex;
             justify-content: space-between;
-            background-color:lightblue;
+            align-items: center;
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 5px 50px;
+            padding: 20px 50px;
             margin: 20px;
             position: sticky;
-            top: 0px;
+            top: 0;
             z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
         }
         .piechart{
             display: flex;
@@ -70,15 +87,27 @@
         .trantable::-webkit-scrollbar {
             display: none;
         }
-        table{
-            background-color: whitesmoke;
-            width: 95%;
+        table {
+            background-color: #ffffff;
+            width: 100%;
             word-break: keep-all;
-            
+            border-collapse: collapse;
         }
-        th{
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
             background-color: #023047;
             color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
         }
     </style>
 </head>

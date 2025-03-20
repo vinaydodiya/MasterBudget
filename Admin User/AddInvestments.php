@@ -8,21 +8,37 @@
     <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
 
     <style>
-        body{
-            background-color:aliceblue;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            align-items: center;
+       body {
+            background-color: #f4f7fa;
+            font-family: verdana;
+            font-size: 14px;
+            position: relative;
+            
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
         }
-        .heading{
+
+        .heading {
             display: flex;
             justify-content: space-between;
-            background-color:lightblue;
+            align-items: center;
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 5px 50px;
+            padding: 20px 50px;
             margin: 20px;
             position: sticky;
-            top: 0px;
+            top: 0;
             z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
         }
         .main-part{
             background-color: transparent;
@@ -33,8 +49,8 @@
             height: auto;
             margin-top: 2%;
             margin-bottom: 2%;
-            box-shadow: 12px, 12px,  black;
-            box-shadow: inset 1px 1px 2px rgb(81, 89, 190);
+            /* box-shadow: 12px, 12px,  black;
+            box-shadow: inset 1px 1px 2px rgb(81, 89, 190); */
             text-align: justify;
             text-justify: inter-word;
         }
@@ -58,6 +74,14 @@
             border-radius: 200px;
             width: 200px;
         }
+        #add-investment{
+            margin-top: 20px;
+            box-shadow: 1px 1px 2px black;
+        }
+        #addbtn:hover, button:hover {
+            
+            background: #007bff;
+        }
         .menu{
             display: flex;
             justify-content: space-between;
@@ -80,7 +104,7 @@
 </head>
 <body>
     <div class="heading">
-        <h1>INVESTMENT</h1>
+        <h1>Investment</h1>
     </div>
 
     <div class="body-content">
@@ -99,7 +123,7 @@
                     <tr>
                         <td><label for="description">Description:</label></td>
                         <td><textarea name="description" id="description" required cols="50" rows="5"></textarea></td></tr>
-                    <tr><td colspan="2" align="center"><button type="submit" name="addbtn">Add</button></t></tr>
+                    <tr><td colspan="2" align="center"><button type="submit" name="addbtn" id="addbtn">Add</button></t></tr>
                 </form>
                 </table>
             </div>

@@ -1,3 +1,8 @@
+
+<?php
+
+include 'connect.php';
+echo '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,93 +14,164 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js">
     </script>
 
-    <style>
-        body{
-            background-color: white;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+<style>
+        body {
+            background-color: #f4f7fa;
+            font-family: verdana;
             font-size: 14px;
             position: relative;
-            overflow: hidden;
+            
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
         }
-        
-    .heading{
-        display: flex;
-        justify-content: space-between;
-        background-color:lightblue;
-        border-radius: 10px;
-        padding: 5px 50px;
-        margin: 20px;
-        position: sticky;
-        top: 0px;
-    }
-    #filter-btn, button{
-        background: rgb(0, 16, 255);
-        color: white;
-        padding: 10px 30px;
-    }
-    
-    .Transaction{
-        display: flex;
-        justify-content: space-evenly;
-        position: relative;
-    }
-    .data{
-        background-color: whitesmoke;
-        border: 2px solid rgb(92, 122, 128);
-        border-radius: 15px;
-        padding:20px;
-        width:160px;
-       
-    }
-    .trantable{
-        height: 400px;
-        overflow-y: scroll;
 
-    }
-    .trantable::-webkit-scrollbar {
-        display: none;
-    }
-    table{
-        background-color: whitesmoke;
-        width: 95%;
-        word-break: keep-all;
-        
-    }
-    th{
-        background-color: #023047;
-        color: white;
-    }
-        #download-btn {
-            background-color: rgb(0, 100, 255);
-            color: white;
-            padding: 20px;
-            margin: auto 20px;
-            border-radius: 50px;
-        }
-        .filterDate{
-            display: none;
-            justify-content: center;
-            
+        .heading-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
             border-radius: 10px;
-            
-            width: 100%;
-            z-index: 10;
-            padding: 5px 10px;
+            padding: 20px 50px;
+            margin: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        #filter-btn, button {
+            background: #007bff;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        #filter-btn:hover, button:hover {
+            background-color: #0056b3;
+        }
+
+        .Transaction {
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
             margin: 20px;
         }
-        input{
-            padding: 10px;
-            border-radius: 10px;
-            border: 2px solid rgb(0, 0, 0);
+
+        .data {
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            width: 160px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .trantable {
+            height: 400px;
+            overflow-y: scroll;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .trantable::-webkit-scrollbar {
+            display: none;
+        }
+
+        table {
+            background-color: #ffffff;
+            width: 100%;
+            word-break: keep-all;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #023047;
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        #download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            margin: 20px auto;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        #download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .filterDate {
+            display: none;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            
+            z-index: 10;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .pdfbtn {
+            text-align: center;
+            margin: 20px;
+        }
+		
     </style>
 </head>
 
 <body>
 <!--  start  Heading Title    -->
-    
-<div class="heading">
+
+<div class="heading-main">
 
 <div class="htitle">
     <h1>Transactions</h1>
@@ -108,7 +184,7 @@
     <!--  End  Heading Title    -->
 
 <div class="filterDate">
-    <form action="AllTransactions.php" method="post">
+    <form action="tablePDF.php" method="post" name="filter">
         <!--<input type="search" name="searchID" id="searchid" placeholder="Transaction ID">-->
         <input type="search" name="searchName" id="searchname" placeholder="Search">
         <!--<input type="search" name="searchType" id="searchtype" placeholder="Type">
@@ -140,8 +216,8 @@
             <th>Amount</th>
         </tr>
     </thead>
-    <tbody>
-        <?php
+    <tbody>';
+        
 
             include 'connect.php';
 
@@ -212,6 +288,17 @@
         let download_button = document.getElementById("download-btn");
         let table = document.getElementById("transaction-table");
 
+                // var from = document.getElementById("from").value;
+                // var to = document.getElementById("to").value;
+                 var fm = document.filter.from.value;
+                 var tm = document.filter.to.value;
+                // var fm = JSON.parse(from);
+                // var tm = JSON.parse(to);
+    const fvalue = JSON.parse('<?= json_encode($from); ?>');
+    const tvalue = JSON.parse('<?= json_encode($to); ?>');
+
+                var date_data = ('Date From : ' + fvalue + ' To : ' + tvalue);
+                console.log(date_data);
         download_button.addEventListener
             ("click", function () {
                 const tableData = [];
@@ -224,7 +311,7 @@
                     }
                     tableData.push(rowData);
                 }
-
+                
                 const docDefinition = {
                     content: [
                         {
@@ -232,14 +319,18 @@
                             style: 'header'
                         },
                         {
+                            text: date_data,
+                            style: 'headerDate'
+                        },
+                        {
                             table: {
-                                widths:['*','*','*','*','*','*','*','*','*','*'],
+                                widths:['*','*','*','*','*','*','*','*','*'],
                                 body: tableData
                             }
                         }
                     ],
                     defaultStyle: {
-                        fontSize: 6
+                        fontSize: 8
                     },
                     styles: {
                         header:{
@@ -249,8 +340,13 @@
                             alignment: 'center',
                             color: '#023047'
                         },
+                        headerDate:{
+                            fontSize: 10,
+                            color: '#023047'
+                        },
                         anotherStyle: {
-                        
+                            italics: true,
+                            alignment: 'right'
                         }         
                     }
                 };

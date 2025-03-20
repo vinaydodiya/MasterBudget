@@ -6,64 +6,159 @@
     <title>Master Budget Admin</title>
     <link rel="shortcut icon" type="image/ico" href="../style/images/favicon.ico">
     <style>
-        body{
-            height: 100vh;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* General Styles */
+        body {
+            overflow: hidden;
             margin: 0;
             padding: 0;
-        }
-      
-        .main_div{
-            display: flex;
-            height: 100%;
+            font-family: Verdana;
+            background-color: #f0f4f8;
         }
 
-        .menubar{
+        /* Main Container */
+        .main_div {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Menubar Styles */
+        .menubar {
             margin: 0;
-            padding: 0px;
+            padding: 20px;
             overflow: hidden;
             background-color: #023047;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: verdana;
             flex: 2;
             height: 100%;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
-        .contener_div{
+
+        .menubar .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menubar .heading img {
+            height: 100px;
+            width: 150px;
+        }
+
+        .menubar ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menubar ul li {
+            list-style: none;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: left;
+            transition: all 0.3s ease;
+            color: white;
+            cursor: pointer;
+        }
+
+        .menubar ul li:hover {
+            background-color: #f0f4f8;
+            color: #023047;
+            transform: translateX(5px);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        /* Content Container */
+        .contener_div {
             flex: 10;
             display: flex;
             flex-direction: column;
         }
+
+        /* Header Styles */
+        .headersid {
+            flex: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         .header{
-            flex: 1;
-            background-color: #023047;
-            color:white;
-        }
-        .contents{
-            flex: 10;
-            height: 98%;
-        }
-        .heading{
-            margin: 20px;
-        }
-        a{
-            text-decoration: none;
-            color: white;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
         }
-        ul{
-            padding: 5%;
+        .header_Title {
+            flex: 2;
+            text-align: center;
         }
-        li{
-            list-style: none;
+
+        .header_Title h1 {
+            color: #023047;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .logout h5 {
+            color: #023047;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .logout img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Content Area */
+        .contents {
+            flex: 10;
+            height: 100%;
+            background-color: #f0f4f8;
             padding: 20px;
-            border-radius: 10px 0px 0px 10px;
-            text-align: left;
         }
-        li:hover{
-            background-color: #219ebc;
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h1{
-            
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        /* Logout Confirmation */
+        .logout-confirm {
+            background-color: #023047;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menubar {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .header_Title h1 {
+                font-size: 2rem;
+            }
+
+            .menubar ul li {
+                padding: 10px 15px;
+            }
         }
     </style>
 </head>
@@ -87,15 +182,26 @@
         </div>
         <div class="contener_div">
             <div class="header">
-                <div class="heading" align="center">
-                    <!--<img src="style/images/Master Budget Logo.png" alt="Master Budget" height="100px" width="50%">-->
-                    <h1>MASTER BUDGET</h1>
-                </div>
+                    <div class="header_Title" >
+                        <h1>MASTER BUDGET</h1>
+                    </div>
+                    <div class="logout">
+                        <h5 onclick="lout()"><abbr title="Log Out"><img src="../style/images/logout.svg" alt="Log Out" width="30px"></abbr></h5>
+                    </div>
             </div>
             <div class="contents">
                 <iframe src="AdminDashboard.php" frameborder="0" name="tframe" height="98%" width="100%"></iframe>
             </div>
         </div>
     </div>
+    <script>
+        function lout() {
+            if (confirm("Do you want to Log Out?")) {
+                window.close();
+                window.open('../index.php', '_self');
+                window.history.clear();
+            }
+        }
+    </script>
 </body>
 </html>

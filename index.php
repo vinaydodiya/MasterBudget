@@ -9,7 +9,11 @@
     
     
     <style>
-        
+        body {
+            
+            font-family: verdana;
+            font-size: 14px;
+        }
         #popup{
             display: none;
             position: absolute;
