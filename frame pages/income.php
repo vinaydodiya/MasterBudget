@@ -93,9 +93,9 @@
             word-break: keep-all;
             border-collapse: collapse;
         }
-
+        
         th, td {
-            padding: 15px;
+            padding: 5px;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
         }
@@ -109,12 +109,26 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        input{
+            width: 80%;
+            background: transparent;
+            border: none;
+            padding: 2px;
+        }
+        .edited{
+            background-color: lightgoldenrodyellow;
+        }
+        .notedited{
+            background-color: #ffffff;
+        }
+
     </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="heading">
     <h1>INCOME</h1>
-    <a href="newtransactions.php"><button><h4>New Transaction</h4></button></a>
+    <a href="NewTranHTML.php"><button><h4>New Transaction</h4></button></a>
 </div>
 <div class="piechart">
     <!--PI chart -->
@@ -215,24 +229,76 @@ console.log(yArray2[0]);
 </tr>
 </thead>
     <tbody>';
-
-while($res = mysqli_fetch_array($q)){
-            echo '<tr><td>'.$res['account'].'</td>';
-            echo '<td>'.$res['tran_id'].'</td>';
-            echo '<td>'.$res['tranname'].'</td>';
-            echo '<td>'.$res['cetegory'].'</td>';
-            echo '<td>'.$res['type'].'</td>';
-            echo '<td>'.$res['method'].'</td>';
-            echo '<td>'.$res['tran_date'].'</td>';
-            echo '<td align=right>'.$res['amount'].'</td>';
-            echo '<td>'.$res['date'].'</td></tr>';
-            
-        }
-echo '
+    $inputID = 1;
+    while($res = mysqli_fetch_array($q)){
+        echo '<tr> <td>'.$res['account'].'</td>';
+        echo '<td> '.$res['tran_id'].'</td>';
+        echo '<td> <input readonly class="editable" id="name'.$inputID.'" type="text" value="'.$res['tranname'].'"></td>';
+        echo '<td> <input readonly class="editable" id="cetegory'.$inputID.'" type="text" value="'.$res['cetegory'].'"></td>';
+        echo '<td> '.$res['type']. '</td>';
+        echo '<td> <input readonly class="editable" id="method'.$inputID.'" type="text" value="'.$res['method'].'"></td>';
+        echo '<td> <input readonly class="editable" id="date'.$inputID.'" type="text" value="'.$res['tran_date'].'"></td>';
+        echo '<td> <input readonly class="editable" id="amount'.$inputID.'" type="number" value="'.$res['amount'].'"></td>';
+        echo '<td> '.$res['date'].'</td></tr>';
+        $inputID++;
+    }
+    
+    echo '<button class="save-btn">Save</button>';
+    echo '
         
     </tbody></table>
-    </div>';
+    </div>
+    ';
+        
             ?>
 
+<script>
+$(document).ready(function() {
+    let editedData = [];
+
+    // Enable editing on double click
+    $(".editable").dblclick(function() {
+        $(this).removeAttr("readonly").focus();
+    });
+
+    // Detect changes and store in array
+    $(".editable").on("input", function() {
+        let row = $(this).closest("tr");
+        let id = row.data("id");
+
+        let updatedRow = {
+            id: id,
+            name: row.find("td:eq(0) input").val(),
+            city: row.find("td:eq(1) input").val(),
+            pincode: row.find("td:eq(2) input").val(),
+            no: row.find("td:eq(3) input").val()
+        };
+
+        let existing = editedData.find(item => item.id === id);
+        if (existing) {
+            Object.assign(existing, updatedRow);
+        } else {
+            editedData.push(updatedRow);
+        }
+
+        $(".save-btn").show();
+    });
+
+    // Save changes
+    $(".save-btn").click(function() {
+        if (editedData.length > 0) {
+            $.ajax({
+                url: "update.php",
+                type: "POST",
+                data: { data: JSON.stringify(editedData) },
+                success: function(response) {
+                    alert(response);
+                    location.reload();
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>

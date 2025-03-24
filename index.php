@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTER BUDJET</title>
-    <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="../MasterBudgets/style/images/logo.png" >
     <link rel="stylesheet" href="style/mainPage.css">
     
     
@@ -73,7 +73,7 @@ label{
 <body>
     <div class="heading">
         <header>
-            <img src="style/images/logo.png" alt="" height="100px" width="150px">
+            <img src="../MasterBudgets/style/images/logo.png" alt="" height="100px" width="100px" id="logoimg">
             <div class="navmenu">
                 <ul>
                     <li onclick="window.scrollTo(0, 0);"><a href="">About</a></li>

@@ -116,7 +116,7 @@
 <body>
 <div class="heading">
     <h1>EXPENSE</h1>
-    <a href="newtransactions.php"><button><h4>New Transaction</h4></button></a>
+    <a href="NewTranHTML.php"><button><h4>New Transaction</h4></button></a>
 </div>
 <div class="piechart">
     <!--PI chart -->

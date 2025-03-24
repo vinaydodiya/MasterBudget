@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Budget Admin</title>
-    <link rel="shortcut icon" type="image/ico" href="../style/images/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="style/images/logo.png" >
     <style>
         /* General Styles */
         body {
@@ -14,7 +14,9 @@
             font-family: Verdana;
             background-color: #f0f4f8;
         }
-
+        #logoimg{
+            border-radius: 50%;
+        }
         /* Main Container */
         .main_div {
             display: flex;
@@ -168,7 +170,7 @@
 
             <div class="main">
                 <div class="heading">
-                    <img src="../style/images/logo.png" alt="Master Budget" height="100px" width="150px">
+                    <img src="../style/images/logo.png" alt="Master Budget" width="100px" >
                 </div>
                 <ul>                    
                     <a href="AdminDashboard.php" target="tframe"><li>Dashboard</li></a>

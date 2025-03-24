@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* Modern CSS Reset */
+
+/* Modern CSS Reset */
 * {
     margin: 0;
     padding: 0;
@@ -18,17 +12,17 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 2rem;
 }
 
 /* Form Container */
 form {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -45,8 +39,8 @@ table {
 th {
     background-color: #2c3e50;
     color: white;
-    padding: 1.25rem;
-    font-size: 1.25rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -59,7 +53,8 @@ td {
 input[type="text"],
 input[type="number"],
 input[type="date"],
-select {
+select,
+textarea {
     width: 100%;
     padding: 0.75rem 1rem;
     border: 1px solid #ced4da;
@@ -72,19 +67,25 @@ select {
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
-select:focus {
+select:focus,
+textarea:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
     background-color: white;
 }
 
-input[readonly] {
-    background-color: #e9ecef;
-    color: #6c757d;
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
 /* Radio Buttons */
+input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
 .radio-group {
     display: flex;
     gap: 1.5rem;
@@ -97,26 +98,9 @@ input[readonly] {
     align-items: center;
     cursor: pointer;
     font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-input[type="radio"] {
-    margin-right: 0.5rem;
-    transform: scale(1.2);
-    accent-color: #3498db;
-}
-
-.radio-label:hover {
-    color: #3498db;
 }
 
 /* Buttons */
-.button-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
 input[type="submit"],
 input[type="reset"] {
     padding: 0.75rem 1.5rem;
@@ -126,6 +110,7 @@ input[type="reset"] {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 0 0.5rem;
 }
 
 input[type="submit"] {
@@ -136,7 +121,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #219653;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 input[type="reset"] {
@@ -147,11 +131,24 @@ input[type="reset"] {
 input[type="reset"]:hover {
     background-color: #c0392b;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Category Link */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     body {
         padding: 1rem;
     }
@@ -171,14 +168,10 @@ input[type="reset"]:hover {
         align-items: flex-start;
     }
     
-    .button-group {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
     input[type="submit"],
     input[type="reset"] {
         width: 100%;
+        margin: 0.5rem 0;
     }
 }
 
@@ -192,50 +185,11 @@ form {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Section Header */
-h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: white;
-    margin: 0;
+/* Custom Select Styling */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
 }
-    </style>
-</head>
-<body>
-    <form action="addCategoryphp.php" method="post">
-        <table align="center">
-            <tr><th colspan="2"><h4>Add Category</h4></th></tr>
-            <tr>
-                <td>Account No</td>
-                <td><?php
-                if(isset($_SESSION))
-                {
-                    /*echo"Session is Started";*/
-                }
-                else{
-                    session_start();
-                }
-                $acn = $_SESSION['Accno'];
-                echo "<input type='number' value='$acn' readonly>"?></td>
-            </tr>
-            <tr>
-                <td>Category Name</td>
-                <td><input type="text" name="txtcet" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <label for="rinc"><input type="radio" name="rtype" value="Income" id="rinc">Income</label>
-                    <label for="rexp"><input type="radio" name="rtype" value="Expense" id="rexp">Expense</label>
-                </td>
-            </tr>
-            <tr></tr>
-            <tr>
-                <th colspan="2">
-                    <input type="submit" value="Submit" id="submitbtn">
-                    <input type="reset" value="Clear" id="resetbtn">
-                </th>
-            </tr>
-        </table>
-    </form>
-</body>
-</html>
