@@ -1,44 +1,128 @@
-body{
-    height: 95vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
-.content{
+
+/* Content Container */
+.content {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    display: flex;
     
-    width: 35%;
-    background-color: rgb(218, 235, 234);
-    box-shadow: 1px 1px 10px black;
-    border-radius: 2%;
+    align-items: center;
 }
 
-table{
-   
-    padding: 50px;
+table {
+    width: 100%;
 }
 
-input, select{
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
+th {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
 
-#textarea{
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
+td {
+    padding: 5px;
 }
 
-label{
-    padding: 10px;
+label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0px;
+    display: block;
 }
 
-#submit{
-    color: white;
-    background-color: forestgreen;
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
-#create{
-    color: white;
-    background-color:dodgerblue;
+
+input, select, textarea :focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Button Styles */
+input[type="submit"], input[type="button"] {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+input[type="button"] {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+input[type="button"]:hover {
+    background-color: #16a085;
+}
+
+/* Link Styles */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    th {
+        font-size: 1.5rem;
+    }
+
+    input,select, textarea {
+        padding: 5px;
+    }
+
+    input[type="submit"], input[type="button"] {
+        padding: 5px;
+    }
 }

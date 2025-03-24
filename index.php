@@ -4,81 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTER BUDJET</title>
-    <link rel="shortcut icon" type="image/ico" href="../MasterBudgets/style/images/logo.png" >
-    <link rel="stylesheet" href="style/mainPage.css">
+    <link rel="shortcut icon" type="image/ico" href="style/images/logo.png">
+    <link rel="stylesheet" href="../MasterBudgets/style/index.css">
     
-    
-    <style>
-        body {
-            
-            font-family: verdana;
-            font-size: 14px;
-        }
-        #popup{
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(240, 255, 255);
-            width: 98vw;
-            height: 100vh;
-            
-        }
-        .loginPopup{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-.contents{
-    
-    width: 50%;
-    background-color: rgb(218, 235, 234);
-    box-shadow: 1px 1px 10px black;
-    border-radius: 2%;
-}
-
-table{
-   
-    padding: 50px;
-}
-
-input{
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
-}
-
-#textarea{
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
-}
-
-label{
-    padding: 10px;
-}
-
-#submit{
-    color: white;
-    background-color: forestgreen;
-}
-#create{
-    color: white;
-    background-color:dodgerblue;
-}
-    </style>
-
 </head>
 <body>
     <div class="heading">
         <header>
-            <img src="../MasterBudgets/style/images/logo.png" alt="" height="100px" width="100px" id="logoimg">
+            <img src="style/images/logo.png" alt="" height="100px" width="150px">
             <div class="navmenu">
                 <ul>
-                    <li onclick="window.scrollTo(0, 0);"><a href="">About</a></li>
-                    <li onclick="window.scrollTo(0, 750);"><a href="">Features</a></li>
-                    <li onclick="window.scrollTo(0, 1300);"><a href="">Contact</a></li>
+                    <li ><a href="">About</a></li>
+                    <li ><a href="">Features</a></li>
+                    <li ><a href="">Contact</a></li>
                     <li><a href="login.html">Login / Sign Up</a></li>
                 </ul>
             </div>
@@ -131,12 +69,20 @@ label{
         </form>
     </div>
     <footer>
-        <div class="links">
-            <a href="#">🌐</a>
-            <a href="#">🪟</a>
-            <a href="#">📧</a>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/company/master-budget" target="_blank">🔗 LinkedIn</a>
+                <a href="https://twitter.com/masterbudget" target="_blank"> Twitter</a>
+                <a href="mailto:support@masterbudget.com">📧 Email</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>Master Budget</strong> - Your trusted finance manager.</p>
+                <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-copyright">
+                <span>© 2025 Master Budget. All Rights Reserved.</span>
+            </div>
         </div>
-        <span align="center"><br>© Master Budget Since 2025</span>
     </footer>
 </body>
 </html>

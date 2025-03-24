@@ -34,7 +34,7 @@ echo '
             background-color: #ffffff;
             border-radius: 10px;
             padding: 20px 50px;
-            margin: 20px;
+            height: 50px;
             position: sticky;
             top: 0;
             z-index: 1;
