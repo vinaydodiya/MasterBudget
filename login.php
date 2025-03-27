@@ -51,29 +51,42 @@ $cntr = 0;
     $q = mysqli_query($con ,$s)
     or 
     die("Error in Login Selection");
-    $cnt = 0;
+    $adminlogin = false;
+    $emailcheck = false;
+    $passcheck = false;
     while($r = mysqli_fetch_array($q)){
         if($email == 'Admin@gmail.com' && $pass == 'Admin123'){
-            $cnt = 20;
+            $adminlogin = true;
         }
-        else if($email == $r['Email'] && $pass == $r['Password']){
-            $cnt = 10;
+        if($email == $r['Email']){
+            $emailcheck = true;
         }
-        
+        if($pass == $r['Password']){
+            $passcheck = true;
+        }
     }
-    if ($cnt == 20){
-        echo "<script> window.open('Admin User/index.php','_self'); </script>";
+    // check if Admin
+    // go to Admin Page
+    if ($adminlogin == true){
+        echo "<script> window.open('Admin User/AdminMainPage.php','_self'); </script>";
     }
-    else if ($cnt == 10){
-       
-            echo "<script> window.open('mainpage.html','_self'); </script>";
-        
-        
+    elseif($emailcheck == true)
+    {
+        if($passcheck = true){
+            echo "<script>alert('Login Successfull..')</script>";
+            include "mainpage.html";
+        }
+        else{
+            echo "<script>alert('Wrong Password!')</script>";
+            include "login.html";
+        } 
     }
     else{
-        echo "<script>alert('Wrong Password!')</script>";
-        include "login.html";
+        echo "<script>alert('User not Exist! Please Register..')</script>";
+        include "signup.php";
     }
+    
+    
 //----------------- End select User from databases ------------
 
 ?>

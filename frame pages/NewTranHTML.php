@@ -52,8 +52,8 @@
             </tr>
             <tr>
             <td colspan="2" align="center">
-                    <label for="rinc"><input type="radio" name="rtype" value="Income" id="rinc">Income</label>
-                    <label for="rexp"><input type="radio" name="rtype" value="Expense" id="rexp">Expense</label>
+                    <label for="rinc"><input type="radio" name="ttype" value="Income" id="rinc">Income</label>
+                    <label for="rexp"><input type="radio" name="ttype" value="Expense" id="rexp">Expense</label>
                 </td>
             </tr>
             <tr>

@@ -240,5 +240,7 @@ echo '
 </body>
 </html>';
 
-
+date_default_timezone_set('Asia/Kolkata');
+        $dt = date("Y-m-d h:i:sa");
+        echo $dt;
 ?>

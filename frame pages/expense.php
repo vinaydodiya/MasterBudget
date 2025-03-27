@@ -38,80 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <style>
-        body {
-            background-color: #f4f7fa;
-            font-family: verdana;
-            font-size: 14px;
-            position: relative;
-            
-            margin: 0;
-            padding: 0;
-            color: #333;
-            position: relative;
-        }
-
-        .heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 20px 50px;
-            height: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .heading h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin: 0;
-        }
-        .piechart{
-            display: flex;
-            justify-content: space-around;
-            margin: 5%;
-        }
-        button{
-            background-color: rgb(0, 136, 0);
-            color: white;
-            padding: 3px 15px;
-        }
-        .trantable{
-            height: 300px;
-            overflow-y: scroll;
-
-        }
-        .trantable::-webkit-scrollbar {
-            display: none;
-        }
-        table {
-            background-color: #ffffff;
-            width: 100%;
-            word-break: keep-all;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        th {
-            background-color: #023047;
-            color: white;
-            font-weight: 500;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <link rel="stylesheet" href="../style/tranIncExp.css">
 </head>
 <body>
 <div class="heading">
@@ -233,6 +160,19 @@ while($res = mysqli_fetch_array($q)){
 echo '
         
     </tbody></table>
+    <table>
+        <form action="updateExpenses.php" method="post">
+            <tr>
+                <td><input type="number" placeholder="Transaction ID" name="tranID" required></td>
+                <td><input required type="text" placeholder="Transaction Name" name="tranName"></td>
+                <td><input required type="text" placeholder="Category" name="category"></td>
+                <td><input required type="text" placeholder="Method" name="method"></td>
+                <td><input required type="date" placeholder="Transaction Date" name="trandate"></td>
+                <td><input required type="number" placeholder="Amount" name="amount"></td>
+                <td><input type="submit" value="UPDATE" name="UPDATE" id="update"><input type="submit" value="DELETE" name="DELETE" id="delete"></td>
+            </tr>
+        </form>
+    </table>
     </div>';
             ?>
 

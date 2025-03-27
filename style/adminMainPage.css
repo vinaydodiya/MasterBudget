@@ -79,7 +79,13 @@ a {
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.header{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
 .header_Title {
     flex: 2;
     text-align: center;

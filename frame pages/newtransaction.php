@@ -2,7 +2,6 @@
 
 <?php
     include "connect.php";
-    session_start();
     $acc = $_SESSION['Accno'];
     $tname = $_POST['tranname'];
     $tcet = $_POST['tcet'];
@@ -12,6 +11,7 @@
     $amt = $_POST['tamount'];
     $tarea = $_POST['txtarea'];
     $d = date("Y-m-d ");
+    date_default_timezone_set('Asia/Kolkata');
     $dt = date("Y-m-d h:i:sa");
 
 
@@ -34,9 +34,7 @@
     mysqli_query($con,$i)
     or
     die("Error in Insert Data");
-    echo "<script>alert('Transaction Successfull...')
-        window.history.go(-2);
-    </script>";
+    
 
     $ibal = "select amount from income where account = '$acc'";
     $qi = mysqli_query($con,$ibal);
@@ -61,7 +59,8 @@
         mysqli_query($con,$expc);
     }
     
-    include "income.php";   
-
-
+    
+    echo "<script>alert('Transaction Successfull...')
+    window.history.go(-2);
+    </script>";
 ?>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Calculator and Savings Suggestions</title>
-    <link rel="stylesheet" href="styletax.css">
+    <link rel="stylesheet" href="../style/styletax.css">
 </head>
 
 <body>

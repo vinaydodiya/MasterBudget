@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="shortcut icon" type="image/ico" href="style/images/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="style/images/logo.png">
     <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
@@ -17,15 +17,15 @@
                 </tr>
                 <tr>
                     <td>Bank Name</td>
-                    <td><input type="text" name="bankName" required></td>
+                    <td><input type="text" name="bankName" placeholder="Bank Name" required></td>
                 </tr>
                 <tr>
                     <td>Account No</td>
-                    <td><input type="number" name="accno"  required minlength="11"></td>
+                    <td><input type="text" name="accno" maxlength="11" pattern="[0-9]{11}" placeholder="00000000000"  required ></td>
                 </tr>
                 <tr>
                     <td>IFSC Code</td>
-                    <td><input type="text" name="ifsc" required></td>
+                    <td><input type="text" name="ifsc" maxlength="11" pattern="[A-Z]{4}[0-9]{7}" placeholder="AAAA0000000" required></td>
                 </tr>
                 <!--<tr>
                     <td>E-MAIL</td>
@@ -33,12 +33,12 @@
                 </tr>-->
                 <tr>
                     <td>Phone No</td>
-                    <td><input type="number" name="phno" required></td>
+                    <td><input type="text" name="phno" maxlength="10" pattern="[0-9]{10}" placeholder="0000000000"  required></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><input type="text" name="addr" placeholder="Branch" style="width:40%;" required>
-                        <input type="number" placeholder="000-000" name="pincode" style="width:30%;" required></td>
+                    <td><input type="text" name="addr" placeholder="Branch" style="width:45%;" required>
+                        <input type="text" placeholder="000000" name="pincode"   maxlength="6" pattern="[0-9]{6}"  style="width:45%;" required></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" id="submit"></td>

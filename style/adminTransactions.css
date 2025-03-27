@@ -1,0 +1,149 @@
+body {
+    background-color: #f4f7fa;
+    font-family: verdana;
+    font-size: 14px;
+    position: relative;
+    
+    margin: 0;
+    padding: 0;
+    color: #333;
+    position: relative;
+}
+
+.heading-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 50px;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heading h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+#filter-btn, button {
+    background: #007bff;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#filter-btn:hover, button:hover {
+    background-color: #0056b3;
+}
+
+.Transaction {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin: 20px;
+}
+
+.data {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trantable {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.trantable::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    background-color: #ffffff;
+    word-break: keep-all;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #023047;
+    color: white;
+    font-weight: 500;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+#download-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    margin: 20px auto;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+}
+
+#download-btn:hover {
+    background-color: #0056b3;
+}
+
+.filterDate {
+    display: none;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    
+    z-index: 10;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    margin: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.pdfbtn {
+    text-align: center;
+    margin: 20px;
+}

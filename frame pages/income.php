@@ -35,95 +35,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/tranIncExp.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <style>
-        body {
-            background-color: #f4f7fa;
-            font-family: verdana;
-            font-size: 14px;
-            position: relative;
-            
-            margin: 0;
-            padding: 0;
-            color: #333;
-            position: relative;
-        }
-
-        .heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 20px 50px;
-            height: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .heading h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin: 0;
-        }
-        .piechart{
-            display: flex;
-            justify-content: space-around;
-            margin: 5%;
-        }
-        button{
-            background-color: rgb(0, 136, 0);
-            color: white;
-            padding: 3px 15px;
-        }
-        .trantable{
-            height: 300px;
-            overflow-y: scroll;
-
-        }
-        .trantable::-webkit-scrollbar {
-            display: none;
-        }
-        table {
-            background-color: #ffffff;
-            width: 100%;
-            word-break: keep-all;
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            padding: 5px;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        th {
-            background-color: #023047;
-            color: white;
-            font-weight: 500;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        input{
-            width: 80%;
-            background: transparent;
-            border: none;
-            padding: 2px;
-        }
-        .edited{
-            background-color: lightgoldenrodyellow;
-        }
-        .notedited{
-            background-color: #ffffff;
-        }
-
-    </style>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="heading">
@@ -233,20 +147,33 @@ console.log(yArray2[0]);
     while($res = mysqli_fetch_array($q)){
         echo '<tr> <td>'.$res['account'].'</td>';
         echo '<td> '.$res['tran_id'].'</td>';
-        echo '<td> <input readonly class="editable" id="name'.$inputID.'" type="text" value="'.$res['tranname'].'"></td>';
-        echo '<td> <input readonly class="editable" id="cetegory'.$inputID.'" type="text" value="'.$res['cetegory'].'"></td>';
+        echo '<td> '.$res['tranname'].'</td>';
+        echo '<td> '.$res['cetegory'].'</td>';
         echo '<td> '.$res['type']. '</td>';
-        echo '<td> <input readonly class="editable" id="method'.$inputID.'" type="text" value="'.$res['method'].'"></td>';
-        echo '<td> <input readonly class="editable" id="date'.$inputID.'" type="text" value="'.$res['tran_date'].'"></td>';
-        echo '<td> <input readonly class="editable" id="amount'.$inputID.'" type="number" value="'.$res['amount'].'"></td>';
+        echo '<td> '.$res['method'].'</td>';
+        echo '<td> '.$res['tran_date'].'</td>';
+        echo '<td> '.$res['amount'].'</td>';
         echo '<td> '.$res['date'].'</td></tr>';
         $inputID++;
     }
     
-    echo '<button class="save-btn">Save</button>';
+    
     echo '
         
     </tbody></table>
+    <table>
+        <form action="updateIncome.php" method="post">
+            <tr>
+                <td><input type="number" placeholder="Transaction ID" name="tranID" required></td>
+                <td><input type="text" placeholder="Transaction Name" name="tranName" required></td>
+                <td><input type="text" placeholder="Category" name="category" required></td>
+                <td><input type="text" placeholder="Method" name="method" required></td>
+                <td><input type="date" placeholder="Transaction Date" name="trandate" required></td>
+                <td><input type="number" placeholder="Amount" name="amount" required></td>
+                <td><input type="submit" value="UPDATE" name="UPDATE" id="update"><input type="submit" value="DELETE" name="DELETE" id="delete"></td>
+            </tr>
+        </form>
+    </table>
     </div>
     ';
         

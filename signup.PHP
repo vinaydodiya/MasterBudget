@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
-    <link rel="shortcut icon" type="image/ico" href="../style/images/logo.png">
+    <link rel="shortcut icon" type="image/ico" href="style/images/logo.png">
 
     <link rel="stylesheet" href="style/login.css">
 </head>
@@ -18,7 +18,7 @@
                 <tr>
                     <td>
                         <label>Name</label><BR>
-                        <input type="text" name="iname" placeholder="First  Last" required>
+                        <input type="text" name="iname" placeholder="First  Last" pattern="[A-Z][a-z]{20}" required>
                     </td>
                 </tr>
                 <tr>
