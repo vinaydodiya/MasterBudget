@@ -10,6 +10,14 @@
 </head>
 <body align="center">
     <div class="content" align="center">
+    <div class="logout" align="left">
+            <h5 onclick="back()"><abbr title="Back"><img src="style/images/back.svg" alt="Log Out" width="30px"></abbr></h5>
+            <script>
+                function back(){
+                window.history.back();
+            }
+            </script>
+        </div>
         <form action="createAccount.php" method="post" name="nsignup">
             <table align="center">
                 <tr>

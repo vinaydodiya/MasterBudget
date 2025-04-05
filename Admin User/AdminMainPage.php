@@ -28,6 +28,14 @@
         </div>
         <div class="contener_div">
             <div class="header">
+            <div class="back">
+        <h5 onclick="back()"><abbr title="Back"><img src="../style/images/back.svg" alt="Log Out" width="30px"></abbr></h5>
+        <script>
+            function back(){
+            window.history.back();
+        }
+        </script>
+    </div>
                     <div class="header_Title" >
                         <h1>MASTER BUDGET</h1>
                     </div>

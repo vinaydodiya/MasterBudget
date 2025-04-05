@@ -6,9 +6,18 @@
     <title>Log In</title>
     <link rel="shortcut icon" type="image/ico" href="../MasterBudgets/style/images/logo.png">
     <link rel="stylesheet" href="style/login.css">
+    
 </head>
 <body align="center">
     <div class="content" align="center">
+        <div class="logout" align="left">
+            <h5 onclick="back()"><abbr title="Back"><img src="style/images/back.svg" alt="Log Out" width="30px"></abbr></h5>
+            <script>
+                function back(){
+                window.history.back();
+            }
+            </script>
+        </div>
         <form action="login.php" method="post" name="nlogin">
             <table align="center">
                 <tr>

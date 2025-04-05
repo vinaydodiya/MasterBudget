@@ -26,6 +26,9 @@
         </div>
         <div class="contener_div">
             <div class="headersid">
+                <div class="back">
+                    <h5 onclick="back()"><abbr title="Back"><img src="style/images/back.svg" alt="Log Out" width="30px"></abbr></h5>
+                </div>
                 <div class="header_Title" align="center">
                     <h1>MASTER BUDGET</h1>
                 </div>
@@ -45,6 +48,9 @@
                 window.open('index.php', '_self');
                 window.history.clear();
             }
+        }
+        function back(){
+            window.history.back();
         }
     </script>
 </body>

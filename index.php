@@ -77,7 +77,7 @@
             </div>
             <div class="footer-info">
                 <p><strong>Master Budget</strong> - Your trusted finance manager.</p>
-                <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+                <p><a href="about.html">About Us</a> | <a href="contactUs.html">Contact</a></p>
             </div>
             <div class="footer-copyright">
                 <span>© 2025 Master Budget. All Rights Reserved.</span>
