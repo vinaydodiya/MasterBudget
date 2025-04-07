@@ -1,6 +1,5 @@
 // script.js
 
-
 function calculateTax() {
     const income = parseFloat(document.getElementById('income').value);
     const country = document.getElementById('country').value;
@@ -12,7 +11,6 @@ function calculateTax() {
 
     let tax = 0;
     let suggestions = [];
-
 
     // USA Tax Slabs (simplified for the sake of example)
     if (country === 'USA') {
@@ -31,7 +29,7 @@ function calculateTax() {
         suggestions.push("2. Deduct **healthcare expenses** (HSA or FSA).");
         suggestions.push("3. Donate to charity for a **tax deduction**.");
     }
-   
+    
     // UK Tax Slabs (simplified for the sake of example)
     else if (country === 'UK') {
         if (income <= 12570) {
@@ -66,7 +64,6 @@ function calculateTax() {
         suggestions.push("3. Consider **health insurance** premiums under **Section 80D**.");
     }
 
-    
     // Canada Tax Slabs (simplified for the sake of example)
     else if (country === 'Canada') {
         if (income <= 47630) {

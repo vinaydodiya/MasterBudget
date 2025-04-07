@@ -55,11 +55,9 @@ echo '
             
             <th>Transaction ID</th>
             <th>Account</th>
-            <th>Transaction Name</th>
             <th>Type</th>
             <th>Category</th>
             <th>Method</th>
-            <th>Memo</th>
             <th>Transaction Date</th>
             <th>Date</th>
             <th>Amount</th>
@@ -99,11 +97,11 @@ echo '
         {
             echo '<tr><td>'.$res['tran_id'].'</td>';
             echo '<td>'.$res['account'].'</td>';
-            echo '<td>'.$res['tranname'].'</td>';
+            //echo '<td>'.$res['tranname'].'</td>';
             echo '<td>'.$res['type'].'</td>';
             echo '<td>'.$res['cetegory'].'</td>';
             echo '<td>'.$res['method'].'</td>';
-            echo '<td>'.$res['memo'].'</td>';
+            //echo '<td>'.$res['memo'].'</td>';
             echo '<td>'.$res['tran_date'].'</td>';
             echo '<td>'.$res['date'].'</td>';
             echo '<td align=right>'.$res['amount'].'</td></tr>';
@@ -170,7 +168,7 @@ echo '
                         },
                         {
                             table: {
-                                widths:['*','*','*','*','*','*','*','*','*','*'],
+                                widths:['*','*','*','*','*','*','*','*'],
                                 body: tableData
                             }
                         }

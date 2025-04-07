@@ -68,13 +68,19 @@ $cntr = 0;
     // check if Admin
     // go to Admin Page
     if ($adminlogin == true){
-        echo "<script> window.open('Admin User/AdminMainPage.php','_self'); </script>";
+        echo "<script> 
+        window.close();
+        window.open('Admin User/AdminMainPage.php','_self'); </script>";
     }
     elseif($emailcheck == true)
     {
         if($passcheck = true){
             echo "<script>alert('Login Successfull..')</script>";
-            include "mainpage.html";
+
+            echo "<script> 
+            window.close();
+            window.open('mainpage.html','_self'); </script>";
+
         }
         else{
             echo "<script>alert('Wrong Password!')</script>";
