@@ -18,7 +18,7 @@
     }
     else{
         echo "<script>alert('Bank Account Already Inserted...')</script>";
-        echo "<script> window.open('mainpage.html','_self'); </script>";
+        echo "<script> window.history.back(); </script>";
     }
     
     

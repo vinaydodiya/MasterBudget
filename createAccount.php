@@ -5,7 +5,7 @@
     $email = $_POST['iemail'];
     $ct = $_POST['ict'];
     $pass = $_POST['ipassword'];
-
+    $_SESSION['MyEmail'] = $email;
     $insert = "Insert into accounts values('$name','$email','$ct','$pass')";
 
     mysqli_query($con, $insert)
